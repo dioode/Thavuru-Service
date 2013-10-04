@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Thahavuru_Service.ThahavuruFaceRecognitionService" CodeBehind="ThahavuruFaceRecognitionService.svc.cs" %>
