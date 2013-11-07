@@ -5,6 +5,10 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using System.Drawing;
+using Thahavuru.DataAccessLayer;
+using Thahavuru.Techniques.FaceRec;
+using Thahavuru.Techniques.WebServiceMethods;
+
 
 namespace Thahavuru_Service
 {
@@ -13,9 +17,11 @@ namespace Thahavuru_Service
     public class ThahavuruFaceRecognitionService : IThahavuruFaceRecognitionService
     {
 
-        public InputImagesList GetMatches(InputImage probeInfo)
+        public ViewModel GetMatches(ViewModel model)
         {
-            return new InputImagesList();
+            FaceMatchAdapter adaptor = new FaceMatchAdapter();
+            adaptor.FaceMatch(ref model.Model);
+            return model;
         }
     }
 }

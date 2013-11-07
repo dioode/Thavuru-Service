@@ -57,17 +57,21 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="Thahavuru.DataAccessLayer">
+      <HintPath>..\..\Thahavuru.Libraries\Thahavuru.Techniques\bin\Debug\Thahavuru.DataAccessLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Thahavuru.Resources">
+      <HintPath>..\..\Thahavuru.Libraries\Thahavuru.Techniques\bin\Debug\Thahavuru.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Thahavuru.Techniques">
+      <HintPath>..\..\Thahavuru.Libraries\Thahavuru.Techniques\bin\Debug\Thahavuru.Techniques.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FaceRecognition.svc" />
     <Content Include="ThahavuruFaceRecognitionService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FaceRecognition.svc.cs">
-      <DependentUpon>FaceRecognition.svc</DependentUpon>
-    </Compile>
-    <Compile Include="IFaceRecognition.cs" />
     <Compile Include="IThahavuruFaceRecognitionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThahavuruFaceRecognitionService.svc.cs">
