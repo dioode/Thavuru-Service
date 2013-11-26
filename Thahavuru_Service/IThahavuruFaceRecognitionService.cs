@@ -13,6 +13,9 @@ namespace Thahavuru_Service
     {
         [OperationContract]
         InputImagesList GetMatches(InputImage probeInfo);
+
+        [OperationContract]
+        string UploadFile(byte[] f, string fileName);
     }
 
 

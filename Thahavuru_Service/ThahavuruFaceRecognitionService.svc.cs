@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using System.Drawing;
+using System.IO;
 
 namespace Thahavuru_Service
 {
@@ -16,6 +17,28 @@ namespace Thahavuru_Service
         public InputImagesList GetMatches(InputImage probeInfo)
         {
             return new InputImagesList();
+        }
+
+        public string UploadFile(byte[] f, string fileName)
+        {
+
+            try
+            {
+
+                MemoryStream ms = new MemoryStream(f);
+                FileStream fs = new FileStream
+                    (System.Web.Hosting.HostingEnvironment.MapPath("~/TransientStorage/") + fileName, FileMode.Create);
+                ms.WriteTo(fs);
+                ms.Close();
+                fs.Close();
+                fs.Dispose();
+                return "OK";
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message.ToString();
+            }
         }
     }
 }
