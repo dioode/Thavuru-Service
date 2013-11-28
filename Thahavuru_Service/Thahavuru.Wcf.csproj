@@ -57,13 +57,12 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="Thahavuru.DataAccessLayer">
-      <HintPath>..\..\Thahavuru.Libraries\Thahavuru.Techniques\bin\Debug\Thahavuru.DataAccessLayer.dll</HintPath>
+    <Reference Include="Thahavuru.Resources, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Thahavuru.Libraries\Thahavuru.Resources\bin\Debug\Thahavuru.Resources.dll</HintPath>
     </Reference>
-    <Reference Include="Thahavuru.Resources">
-      <HintPath>..\..\Thahavuru.Libraries\Thahavuru.Techniques\bin\Debug\Thahavuru.Resources.dll</HintPath>
-    </Reference>
-    <Reference Include="Thahavuru.Techniques">
+    <Reference Include="Thahavuru.Techniques, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Thahavuru.Libraries\Thahavuru.Techniques\bin\Debug\Thahavuru.Techniques.dll</HintPath>
     </Reference>
   </ItemGroup>
@@ -88,6 +87,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

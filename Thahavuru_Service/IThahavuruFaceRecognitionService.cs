@@ -13,32 +13,19 @@ namespace Thahavuru_Service
     [ServiceContract]
     public interface IThahavuruFaceRecognitionService
     {
+        //[OperationContract]
+        //ViewModel GetMatches(ViewModel model);
+
         [OperationContract]
-        InputImagesList GetMatches(ViewModel model);
+        UserInterfaceModel GetMatches(UserInterfaceModel model);
     }
 
-    public class ViewModel
-    {
-
-        [DataMember]
-        public UserInterfaceModel Model;
-    }
+    //[DataContract]
+    //public class ViewModel
+    //{
+    //    [DataMember]
+    //    public UserInterfaceModel Model;
+    //}
     
-    [DataContract]
-    public class InputImage
-    {
-        
-        [DataMember]
-        public byte[][] Probe { get; set; }
-
-        [DataMember]
-        public string ID{ get; set; }
-    }
-
-    [DataContract]
-    public class InputImagesList
-    {
-        [DataMember]
-        List<InputImage> Probe { get; set; }
-    }
+    
 }
