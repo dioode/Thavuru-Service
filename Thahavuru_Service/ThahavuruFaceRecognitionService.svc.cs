@@ -8,6 +8,7 @@ using System.Drawing;
 using Thahavuru.Techniques.FaceRec;
 using Thahavuru.Techniques.WebServiceMethods;
 using Thahavuru.Resources.ViewModels;
+using System.IO;
 
 
 namespace Thahavuru_Service
@@ -22,6 +23,28 @@ namespace Thahavuru_Service
             FaceMatchAdapter adaptor = new FaceMatchAdapter();
             adaptor.FaceMatch(ref model);
             return model;
+        }
+
+        public string UploadFile(byte[] f, string fileName)
+        {
+
+            try
+            {
+
+                MemoryStream ms = new MemoryStream(f);
+                FileStream fs = new FileStream
+                    (System.Web.Hosting.HostingEnvironment.MapPath("~/TransientStorage/") + fileName, FileMode.Create);
+                ms.WriteTo(fs);
+                ms.Close();
+                fs.Close();
+                fs.Dispose();
+                return "OK";
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message.ToString();
+            }
         }
     }
 }

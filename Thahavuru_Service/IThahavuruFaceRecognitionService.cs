@@ -17,6 +17,10 @@ namespace Thahavuru_Service
         //ViewModel GetMatches(ViewModel model);
 
         [OperationContract]
+        InputImagesList GetMatches(InputImage probeInfo);
+
+        [OperationContract]
+        string UploadFile(byte[] f, string fileName);
         UserInterfaceModel GetMatches(UserInterfaceModel model);
     }
 
@@ -26,6 +30,6 @@ namespace Thahavuru_Service
     //    [DataMember]
     //    public UserInterfaceModel Model;
     //}
-    
-    
+
+
 }
